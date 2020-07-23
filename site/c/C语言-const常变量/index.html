@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>const常变量 - Le_desin Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "const\u5e38\u53d8\u91cf";
+    var mkdocs_page_input_path = "c/C\u8bed\u8a00-const\u5e38\u53d8\u91cf.md";
+    var mkdocs_page_url = "/c/C\u8bed\u8a00-const\u5e38\u53d8\u91cf/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Le_desin Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">主页</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">C语言</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">const常变量</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#c">C语言学习笔记</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">定义</a></li>
+        
+            <li><a class="toctree-l4" href="#const">const 与宏定义常量区别</a></li>
+        
+            <li><a class="toctree-l4" href="#const_1">那么const 可以被修改吗？</a></li>
+        
+            <li><a class="toctree-l4" href="#const_2">const 使用场景</a></li>
+        
+            <li><a class="toctree-l4" href="#const-volatile">const &amp; volatile</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../C语言-字节对齐/">字节对齐</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Markdown使用笔记/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Le_desin Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>C语言 &raquo;</li>
+        
+      
+    
+    <li>const常变量</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="c">C语言学习笔记</h1>
+<blockquote>
+<p>const-常变量：它是定义<code>只读变量</code>的关键字,说 const 定义的是变量，但又相当于常量；说它定义的是常量，但又有变量的属性，所以叫<code>常变量</code>。</p>
+</blockquote>
+<p>[toc]</p>
+<h2 id="_1">定义</h2>
+<p>​   用 const 定义的变量的值是不允许改变的，即<code>不允许给它重新赋值</code>，即使是赋相同的值也不可以。所以说它定义的是只读变量。这也就意味着必须在定义的时候就给它赋初值。</p>
+<pre><code class="c">const int a = 5;
+/* 或者 */
+int const a = 5;
+</code></pre>
+
+<h2 id="const">const 与宏定义<code>常量</code>区别</h2>
+<pre><code class="c">#define A 5
+const int a = 5;
+</code></pre>
+
+<p>很多人在学习 const 的时候都会混淆它与 define 的区别。从功能上说它们确实很像，但它们又有明显的不同：</p>
+<ol>
+<li><code>define是预编译指令，而const是普通变量的定义</code>。define定义的宏是在预处理阶段展开的，而const定义的只读变量是在编译运行阶段使用的。</li>
+<li><code>const定义的是变量，而define定义的是常量</code>。define定义的宏在编译后就不存在了，它不占用内存，因为它不是变量，系统只会给变量分配内存。但const定义的常变量本质上仍然是一个变量，具有变量的基本属性，有类型、占用存储单元。可以说，常变量是有名字的不变量，而常量是没有名字的。有名字就便于在程序中被引用，所以从使用的角度看，除了不能作为数组的长度，用const定义的常变量具有宏的优点，而且使用更方便。所以编程时在使用const和define都可以的情况下尽量使用常变量来取代宏。</li>
+<li><code>const定义的是变量，而宏定义的是常量，所以const定义的对象有数据类型，而宏定义的对象没有数据类型</code>。所以编译器可以对前者进行类型安全检查，而对后者只是机械地进行字符替换，没有<code>类型安全检查</code>。这样就很容易出问题，即“边际问题”或者说是“括号问题”。</li>
+</ol>
+<h2 id="const_1">那么const 可以被修改吗？</h2>
+<p>1.直接赋值，我们知道const定义的是不能被直接赋值的，编译时就会出错。</p>
+<pre><code class="c">const.c:9:7: error: assignment of read-only variable ‘a’ 
+    a = 10;
+        ^
+</code></pre>
+
+<p>2.通过指针修改。</p>
+<p><code>定义局部常变量：</code></p>
+<pre><code class="c">#include &quot;stdio.h&quot;
+
+int main(int argc,char * argv )
+{
+    const int a = 5;
+    int  *p = (int *)&amp;a;
+    *p = 10; //修改指向a地址的值
+    printf(&quot;const a = [%d]\r\n&quot;,a);
+    printf(&quot;point p =[%d]\r\n&quot;,*p);
+    return 0;
+}
+</code></pre>
+
+<p>结果：</p>
+<pre><code class="c">const a = [10]
+point p = [10]
+</code></pre>
+
+<p>我们发现定义的const a确实被以指针的间接方式被修改了（编译器没发现）。const 可以修改，真的是这样吗，看下面的情况。</p>
+<p><code>定义全局const常变量：</code></p>
+<pre><code class="c">#include &quot;stdio.h&quot;
+const int a = 5;
+int main(int argc,char * argv )
+{
+    int  *p = (int *)&amp;a;
+    *p = 10; //修改指向a地址的值
+    printf(&quot;const a = [%d]\r\n&quot;,a);
+    printf(&quot;point p =[%d]\r\n&quot;,*p);
+    return 0;
+}
+</code></pre>
+
+<p>结果：</p>
+<pre><code class="c">段错误 (核心已转储)
+</code></pre>
+
+<p>出现段错误的原因无非就是这么几个：访问一个不存在的地址、访问系统保护的地址、访问只读内存地址、读写一个空指针、堆栈溢出、数组越界等。</p>
+<p>3.<code>const 是如何存储的</code></p>
+<p>​       全局const变量是<code>不分配内存地址</code>的，它编译器放置在符号表中作为编译期常量，全局const变量放在只读数据段中，受到只读数据段的权限保护，当你修改一个只读数据段中的内容时，会得到一个运行时错误。而局部const变量是放在堆栈之中，因为在内存中有地址，通过修改地址中的值可以达到修改const所指内存中值的目的。</p>
+<p><code>编译器通常不为普通const常量分配存储空间，而是将它们保存在符号表中，这使得它成为一个编译期间的常量，没有了存储与读内存的操作，使得它的效率也很高。</code></p>
+<h2 id="const_2">const 使用场景</h2>
+<h2 id="const-volatile">const &amp; volatile</h2>
+<p>一，const, volatile含义
+（1）const含义是“<code>请做为常量使用</code>”，而并非“放心吧，那肯定是个常量”。
+（2）volatile的含义是“<code>请不要做自以为是的优化</code>，这个值可能变掉的”，而并非“你可以修改这个值”。</p>
+<p>二，const, volatile的作用以及起作用的阶段</p>
+<p>（1）const 只在编译期有用，在运行期无用
+const在编译期保证在C的“源代码”里面，没有对其修饰的变量进行修改的地方（如有则报错，编译不通过），而运行期该变量的值是否被改变则不受const的限制。
+（2） volatile 在编译期和运行期都有用
+在编译期告诉编译器：请不要做自以为是的优化，这个变量的值可能会变掉
+在运行期：<code>每次用到该变量的值，都从内存中取该变量的值</code>。</p>
+<p>三，const, volatile同时修饰一个变量
+（1）合法性
+“volatile”的含义并非是“non-const”，volatile 和 const 不构成反义词，所以可以放一起修饰一个变量。
+（2）同时修饰一个变量的含义
+表示一个变量在程序编译期不能被修改且不能被优化；在程序运行期，变量值可修改，但每次用到该变量的值都要从内存中读取，以防止意外错误。</p>
+<blockquote>
+<p>参考资料：</p>
+<p>[1]:https://blog.csdn.net/u011391093/article/details/45269291
+[2]:http://c.biancheng.net/view/217.html
+[3]:https://www.cnblogs.com/ralap7/p/9115646.html
+[4]:https://blog.csdn.net/ShenJu_DL_ShengHuo/article/details/48241217
+</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../C语言-字节对齐/" class="btn btn-neutral float-right" title="字节对齐">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="主页"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../C语言-字节对齐/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

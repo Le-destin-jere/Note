@@ -1,0 +1,325 @@
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+INFO    -  Cleaning site directory 
+[I 200721 21:04:20 server:283] Serving on http://127.0.0.1:8000
+[I 200721 21:04:20 handlers:60] Start watching changes
+[I 200721 21:04:27 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[W 200721 21:04:32 web:2064] 404 GET /%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.49ms
+[W 200721 21:04:32 web:2064] 404 GET /%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.56ms
+[I 200721 21:04:33 handlers:133] Browser Connected: http://127.0.0.1:8000/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[W 200721 21:04:37 web:2064] 404 GET /%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.34ms
+[W 200721 21:04:37 web:2064] 404 GET /%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.80ms
+[I 200721 21:04:38 handlers:133] Browser Connected: http://127.0.0.1:8000/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[I 200721 21:04:41 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:05:46 handlers:93] Reload 1 waiters: /usr/lib/python3/dist-packages/mkdocs/assets/search/mkdocs/js/require.js
+[I 200721 21:05:47 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:06:03 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/docs/c/C语言-const常变量.md
+[I 200721 21:06:04 handlers:133] Browser Connected: http://127.0.0.1:8000/
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 21:09:45 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 21:09:45 handlers:80] Ignore: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 21:09:46 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:10:03 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:10:06 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 21:10:09 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 21:10:13 handlers:133] Browser Connected: http://127.0.0.1:8000/net/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE-lwip/
+[I 200721 21:10:47 handlers:133] Browser Connected: http://127.0.0.1:8000/
+INFO    -  Building documentation... 
+[E 200721 21:11:20 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 101, in builder
+        theme_dir=theme_dir
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 177, in load_config
+        cfg.load_file(config_file)
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 123, in load_file
+        return self.load_dict(utils.yaml_load(config_file))
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 117, in load_dict
+        "{0}".format(type(patch)))
+    mkdocs.exceptions.ConfigurationError: The configuration is invalid. The expected type was a key value mapping (a python dict) but we got an object of type: <class 'NoneType'>
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 21:11:20 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 21:11:21 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:11:28 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:11:35 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 21:13:43 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 21:14:02 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 21:14:08 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 21:14:10 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 22:09:28 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 22:09:29 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+INFO    -  Building documentation... 
+[E 200721 22:09:31 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 101, in builder
+        theme_dir=theme_dir
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 177, in load_config
+        cfg.load_file(config_file)
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 123, in load_file
+        return self.load_dict(utils.yaml_load(config_file))
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 117, in load_dict
+        "{0}".format(type(patch)))
+    mkdocs.exceptions.ConfigurationError: The configuration is invalid. The expected type was a key value mapping (a python dict) but we got an object of type: <class 'NoneType'>
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 22:09:31 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 22:09:31 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+[I 200721 22:09:35 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+INFO    -  Building documentation... 
+WARNING -  Config value: 'nav'. Warning: Unrecognised configuration name: nav 
+[I 200721 22:09:42 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 22:09:43 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+INFO    -  Building documentation... 
+WARNING -  The pages config in the mkdocs.yml uses the deprecated structure. This will be removed in the next release of MkDocs. See for details on updating: http://www.mkdocs.org/about/release-notes/ 
+ERROR   -  file not found: /home/ledestin123/my_book/docs/c/ Markdown使用笔记.md 
+ERROR   -  Error building page c/ Markdown使用笔记.md 
+[E 200721 22:10:01 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 106, in builder
+        build(config, live_server=live_server, dirty=dirty)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 380, in build
+        build_pages(config, dirty=dirty)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 333, in build_pages
+        dump_json)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 180, in _build_page
+        input_content = io.open(input_path, 'r', encoding='utf-8').read()
+    FileNotFoundError: [Errno 2] No such file or directory: '/home/ledestin123/my_book/docs/c/ Markdown使用笔记.md'
+[I 200721 22:10:04 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+[W 200721 22:10:07 web:2064] 404 GET /c/%20Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.53ms
+[W 200721 22:10:07 web:2064] 404 GET /favicon.ico (127.0.0.1) 0.87ms
+[W 200721 22:10:08 web:2064] 404 GET /c/%20Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.53ms
+[I 200721 22:10:10 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/#_1
+[I 200721 22:10:12 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 22:10:16 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/
+[I 200721 22:10:30 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[W 200721 22:10:41 web:2064] 404 GET /c/%20Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.58ms
+INFO    -  Building documentation... 
+WARNING -  The pages config in the mkdocs.yml uses the deprecated structure. This will be removed in the next release of MkDocs. See for details on updating: http://www.mkdocs.org/about/release-notes/ 
+[E 200721 22:11:38 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 106, in builder
+        build(config, live_server=live_server, dirty=dirty)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 380, in build
+        build_pages(config, dirty=dirty)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 333, in build_pages
+        dump_json)
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/build.py", line 180, in _build_page
+        input_content = io.open(input_path, 'r', encoding='utf-8').read()
+    FileNotFoundError: [Errno 2] No such file or directory: '/home/ledestin123/my_book/docs/Markdown使用笔记.html'
+[W 200721 22:11:45 web:2064] 404 GET /c/%20Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.61ms
+[I 200721 22:11:47 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[W 200721 22:11:48 web:2064] 404 GET /c/%20Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.88ms
+[I 200721 22:11:55 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 22:11:59 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/
+[I 200721 22:12:05 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+INFO    -  Building documentation... 
+[E 200721 22:12:42 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 101, in builder
+        theme_dir=theme_dir
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 177, in load_config
+        cfg.load_file(config_file)
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 123, in load_file
+        return self.load_dict(utils.yaml_load(config_file))
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 117, in load_dict
+        "{0}".format(type(patch)))
+    mkdocs.exceptions.ConfigurationError: The configuration is invalid. The expected type was a key value mapping (a python dict) but we got an object of type: <class 'NoneType'>
+INFO    -  Building documentation... 
+WARNING -  The pages config in the mkdocs.yml uses the deprecated structure. This will be removed in the next release of MkDocs. See for details on updating: http://www.mkdocs.org/about/release-notes/ 
+[I 200721 22:12:44 handlers:93] Reload 1 waiters: /home/ledestin123/my_book/mkdocs.yml
+[I 200721 22:12:44 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 22:12:46 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[E 200721 22:12:47 web:1591] Uncaught exception GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/', 'Upgrade-Insecure-Requests': '1'})
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 1512, in _execute
+        result = yield result
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1055, in run
+        value = future.result()
+      File "/usr/lib/python3/dist-packages/tornado/concurrent.py", line 238, in result
+        raise_exc_info(self._exc_info)
+      File "<string>", line 4, in raise_exc_info
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1069, in run
+        yielded = self.gen.send(value)
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 2422, in get
+        yield self.flush()
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 953, in flush
+        return self.request.connection.write(chunk, callback=callback)
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 437, in write
+        self._pending_write = self.stream.write(self._format_chunk(chunk))
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 412, in _format_chunk
+        "Tried to write more data than Content-Length")
+    tornado.httputil.HTTPOutputError: Tried to write more data than Content-Length
+[E 200721 22:12:47 web:1016] Cannot send error response after headers written
+[W 200721 22:12:47 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.59ms
+[I 200721 22:12:47 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[W 200721 22:12:47 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.67ms
+[I 200721 22:12:48 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[E 200721 22:13:53 web:1591] Uncaught exception GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2', 'Accept-Encoding': 'gzip, deflate', 'Referer': 'http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1'})
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 1512, in _execute
+        result = yield result
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1055, in run
+        value = future.result()
+      File "/usr/lib/python3/dist-packages/tornado/concurrent.py", line 238, in result
+        raise_exc_info(self._exc_info)
+      File "<string>", line 4, in raise_exc_info
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1069, in run
+        yielded = self.gen.send(value)
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 2422, in get
+        yield self.flush()
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 953, in flush
+        return self.request.connection.write(chunk, callback=callback)
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 437, in write
+        self._pending_write = self.stream.write(self._format_chunk(chunk))
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 412, in _format_chunk
+        "Tried to write more data than Content-Length")
+    tornado.httputil.HTTPOutputError: Tried to write more data than Content-Length
+[E 200721 22:13:53 web:1016] Cannot send error response after headers written
+[W 200721 22:13:54 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 1.02ms
+[I 200721 22:13:54 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[W 200721 22:13:54 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.56ms
+[I 200721 22:13:54 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[E 200721 22:14:01 web:1591] Uncaught exception GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2', 'Accept-Encoding': 'gzip, deflate', 'Referer': 'http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1'})
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 1512, in _execute
+        result = yield result
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1055, in run
+        value = future.result()
+      File "/usr/lib/python3/dist-packages/tornado/concurrent.py", line 238, in result
+        raise_exc_info(self._exc_info)
+      File "<string>", line 4, in raise_exc_info
+      File "/usr/lib/python3/dist-packages/tornado/gen.py", line 1069, in run
+        yielded = self.gen.send(value)
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 2422, in get
+        yield self.flush()
+      File "/usr/lib/python3/dist-packages/tornado/web.py", line 953, in flush
+        return self.request.connection.write(chunk, callback=callback)
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 437, in write
+        self._pending_write = self.stream.write(self._format_chunk(chunk))
+      File "/usr/lib/python3/dist-packages/tornado/http1connection.py", line 412, in _format_chunk
+        "Tried to write more data than Content-Length")
+    tornado.httputil.HTTPOutputError: Tried to write more data than Content-Length
+[E 200721 22:14:01 web:1016] Cannot send error response after headers written
+[W 200721 22:14:01 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.38ms
+[I 200721 22:14:01 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[W 200721 22:14:01 web:2064] 404 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.59ms
+[I 200721 22:14:01 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+INFO    -  Building documentation... 
+[E 200721 22:14:25 ioloop:638] Exception in callback (5, <function wrap.<locals>.null_wrapper at 0x7f9de888a840>)
+    Traceback (most recent call last):
+      File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 888, in start
+        handler_func(fd_obj, events)
+      File "/usr/lib/python3/dist-packages/tornado/stack_context.py", line 277, in null_wrapper
+        return fn(*args, **kwargs)
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1560, in handle_read
+        self.process_events()
+      File "/usr/lib/python3/dist-packages/pyinotify.py", line 1275, in process_events
+        self._default_proc_fun(revent)
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 153, in inotify_event
+        self.callback()
+      File "/usr/lib/python3/dist-packages/livereload/handlers.py", line 67, in poll_tasks
+        filepath, delay = cls.watcher.examine()
+      File "/usr/lib/python3/dist-packages/livereload/watcher.py", line 73, in examine
+        func and func()
+      File "/usr/lib/python3/dist-packages/mkdocs/commands/serve.py", line 101, in builder
+        theme_dir=theme_dir
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 177, in load_config
+        cfg.load_file(config_file)
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 123, in load_file
+        return self.load_dict(utils.yaml_load(config_file))
+      File "/usr/lib/python3/dist-packages/mkdocs/config/base.py", line 117, in load_dict
+        "{0}".format(type(patch)))
+    mkdocs.exceptions.ConfigurationError: The configuration is invalid. The expected type was a key value mapping (a python dict) but we got an object of type: <class 'NoneType'>
+INFO    -  Building documentation... 
+WARNING -  The pages config in the mkdocs.yml uses the deprecated structure. This will be removed in the next release of MkDocs. See for details on updating: http://www.mkdocs.org/about/release-notes/ 
+[I 200721 22:14:26 handlers:93] Reload 2 waiters: /home/ledestin123/my_book/mkdocs.yml
+[W 200721 22:14:26 web:2064] 416 GET /c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/ (127.0.0.1) 0.60ms
+[W 200721 22:14:34 web:2064] 404 GET /c/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.42ms
+[W 200721 22:14:34 web:2064] 404 GET /c/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.64ms
+[I 200721 22:14:35 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[W 200721 22:14:50 web:2064] 404 GET /c/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.68ms
+[W 200721 22:14:50 web:2064] 404 GET /c/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80 (127.0.0.1) 0.89ms
+[I 200721 22:14:51 handlers:133] Browser Connected: http://127.0.0.1:8000/c/Markdown%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/
+[I 200721 22:14:54 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 22:14:56 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/
+[I 200721 22:15:05 handlers:133] Browser Connected: http://127.0.0.1:8000/
+[I 200721 22:15:17 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-const%E5%B8%B8%E5%8F%98%E9%87%8F/
+[I 200721 22:15:48 handlers:133] Browser Connected: http://127.0.0.1:8000/c/C%E8%AF%AD%E8%A8%80-%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/

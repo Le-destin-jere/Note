@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>字节对齐 - Le_desin Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u5b57\u8282\u5bf9\u9f50";
+    var mkdocs_page_input_path = "c/C\u8bed\u8a00-\u5b57\u8282\u5bf9\u9f50.md";
+    var mkdocs_page_url = "/c/C\u8bed\u8a00-\u5b57\u8282\u5bf9\u9f50/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Le_desin Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">主页</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">C语言</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../C语言-const常变量/">const常变量</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">字节对齐</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#c">C语言学习笔记</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">查看默认字节对齐方式</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">复合类型对齐方式</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Markdown使用笔记/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Le_desin Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>C语言 &raquo;</li>
+        
+      
+    
+    <li>字节对齐</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="c">C语言学习笔记</h1>
+<blockquote>
+<p>字节对齐：计算机并非逐字节大小读写内存，而是以2,4,或8的 倍数的字节块来读写内存，如此一来就会对基本数据类型的合法地址作出一些限制，即它的地址必须是2，4或8的倍数。那么就要求各种<code>数据类型按照一定的规则在空间上排列，这就是对齐。</code></p>
+<p>1.为了<code>加快CPU访问内存的读取效率</code>，CPU读取数据往往是从数据对齐地址开始，并且一次载入固定位宽的数据。</p>
+<p>2.<code>节省内存大小</code></p>
+</blockquote>
+<p>[toc]</p>
+<h2 id="_1">查看默认字节对齐方式</h2>
+<p>c语言在给不同类型变量分配地址空间时，并<code>不是总是紧邻着</code>上一个变量的地址空间分配的，而是它所在的地址空间，必须被它的默认对齐字节数整除。例如，int类型占4字节，其默认对齐字节数为4，那么它所在的地址的低4位必须为0x0、0x4、0x8...,因为这些地址才能被4整除；又如short类型，其本身占2字节，默认对齐字节数为2，则其地址的低4位必须为0x0, 0x2, 0x4, 0x6；那么char型就不用说了，他可以分配在任意地址。</p>
+<pre><code class="c">#include &quot;stdio.h&quot;
+
+int main(int argc,char * argv )
+{
+    int  a;  // 4byte
+    char b;  // 1byte
+    short c; // 2byte
+
+    printf(&quot;sizeof char [%ld]\r\n&quot;,sizeof(char));
+    printf(&quot;sizeof int [%ld]\r\n&quot;,sizeof(int));
+    printf(&quot;sizeof short [%ld]\r\n&quot;,sizeof(short));
+    printf(&quot;int&amp;.a:[%p]\r\n&quot;,&amp;a);
+    printf(&quot;char&amp;.b:[%p]\r\n&quot;,&amp;b);
+    printf(&quot;short&amp;.c:[%p]\r\n&quot;,&amp;c);
+
+    return 0;
+}
+</code></pre>
+
+<p>结果：gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) </p>
+<pre><code>sizeof char [1]
+sizeof int [4]
+sizeof short [2]
+int&amp;.a:[0x7fff8e0b6054]
+char&amp;.b:[0x7fff8e0b6051]
+short&amp;.c:[0x7fff8e0b6052]
+</code></pre>
+
+<p>结果看出，定义的三个变量分配的地址并不是根据变量先后定义顺序来的，可能编译器有优化。</p>
+<p>存储结构：</p>
+<table>
+<thead>
+<tr>
+<th align="center">0x..51</th>
+<th align="center">[b]</th>
+<th align="center">[c</th>
+<th align="center">c]</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0x..54</td>
+<td align="center">[a</td>
+<td align="center">a</td>
+<td align="center">a</td>
+<td align="center">a]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">复合类型对齐方式</h2>
+<p>除了基本类型之外，复合类型如结构体和联合等都能改变其默认对齐方式，gcc通常默认的对齐方式为4字节。</p>
+<p>1.<code>#pragma pack(n)</code>
+// 编译时，使对齐方式为n。n必须是2的幂指数，且n只有在小于结构体成员的最大默认对齐字节数才生效。就是只能用来<code>减小对齐方式</code>。
+<code>#pragma pack()</code>  // 恢复默认对齐方式</p>
+<p>2.<code>#pragma pack(push, n)</code> //保存以前设置的对齐方式，并使当前对齐方式变成n
+<code>#pragma pack(pop)</code>   //恢复到之前的对齐方式</p>
+<p>3.<code>__attribute__((__packed__))</code> // 取消字节优化对齐，即都是1字节对齐
+<code>__attribute__((packed))</code>// 同上 </p>
+<p>4.<code>__attribute__((aligned(n)))</code> //该参数并不会改变每个成员的默认对齐方式，而是将变量占用的空间大小指定为n的整数倍，空字节用于填充，且变量的首地址也必须被n整除。<strong>只有当n大于结构体成员的最大对齐字节</strong>数时才有效，n为2的幂指数。当然，该参数对于基本变量也有效。
+<code>__attribute__((aligned))</code>   // 自动选择最有益的方式对齐，可以提高拷贝操作的效率。
+<code>__attribute__((__aligned__))</code> //同上</p>
+<p>来看第三第四种情况的运行结果：</p>
+<pre><code class="c">#include &quot;stdio.h&quot;
+
+typedef struct 
+{
+    char a;
+    int b;
+    short c;
+}  __attribute__((__aligned__(4))) MT;
+typedef struct 
+{
+    char a;
+    int b;
+    short c;
+}  __attribute__((__aligned__)) MT2;
+
+typedef struct 
+{
+    char a;
+    int b;
+    short c;
+}  __attribute__((__packed__)) MT3;
+
+
+MT mt1 = { 0 };
+MT2 mt2 = { 0 };
+MT3 mt3 = { 0 };
+
+int main(int argc,char * argv )
+{
+    printf(&quot;sizeof char [%ld]\r\n&quot;,sizeof(char));
+    printf(&quot;sizeof int [%ld]\r\n&quot;,sizeof(int));
+    printf(&quot;sizeof short [%ld]\r\n&quot;,sizeof(short));
+
+    printf(&quot;\r\nsize of MT sturct is %ld byte.\r\nsize of MT2 sturct is %ld byte.\r\nsize of MT3 sturct is %ld byte.\r\n&quot;,sizeof(mt1),sizeof(mt2),sizeof(mt3));
+    printf(&quot;&amp;mt1.a:[%p]\r\n&quot;,&amp;mt1.a);
+    printf(&quot;&amp;mt1.b:[%p]\r\n&quot;,&amp;mt1.b);
+    printf(&quot;&amp;mt1.c:[%p]\r\n&quot;,&amp;mt1.c);
+    printf(&quot;&amp;mt2.a:[%p]\r\n&quot;,&amp;mt2.a);
+    printf(&quot;&amp;mt2.b:[%p]\r\n&quot;,&amp;mt2.b);
+    printf(&quot;&amp;mt2.c:[%p]\r\n&quot;,&amp;mt2.c);
+    printf(&quot;&amp;mt3.a:[%p]\r\n&quot;,&amp;mt3.a);
+    printf(&quot;&amp;mt3.b:[%p]\r\n&quot;,&amp;mt3.b);
+    printf(&quot;&amp;mt3.c:[%p]\r\n&quot;,&amp;mt3.c);
+
+    return 0;
+}
+</code></pre>
+
+<p>结果：gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) </p>
+<pre><code>size of MT sturct is 12 byte.
+size of MT2 sturct is 16 byte.
+size of MT3 sturct is 7 byte.
+&amp;mt1.a:[0x5605295cd020]
+&amp;mt1.b:[0x5605295cd024]
+&amp;mt1.c:[0x5605295cd028]
+&amp;mt2.a:[0x5605295cd030]
+&amp;mt2.b:[0x5605295cd034]
+&amp;mt2.c:[0x5605295cd038]
+&amp;mt3.a:[0x5605295cd040]
+&amp;mt3.b:[0x5605295cd041]
+&amp;mt3.c:[0x5605295cd045]
+</code></pre>
+
+<p>存储结构：</p>
+<p>对于mt1结构体进行四字节对齐<code>__attribute__((__aligned__(4)))</code>，结构体大小为12字节，从结果上看存储结构如下:</p>
+<table>
+<thead>
+<tr>
+<th align="center">0x..20</th>
+<th align="center">[a]</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0x..24</td>
+<td align="center">[b</td>
+<td align="center">b</td>
+<td align="center">b</td>
+<td align="center">b]</td>
+</tr>
+<tr>
+<td align="center">0x..28</td>
+<td align="center">[c</td>
+<td align="center">c]</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>对于mt2使用自动对齐优化，<code>__attribute__((__aligned__))</code>,结构体大小为16字节，但从结果上看 分配的内存地址与4字节对齐的mt1一样，为什多出4字节？</p>
+<p>对于mt3使用1字节对齐，<code>__attribute__((__packed__))</code>，结构体字节大小为7字节，就是结构体内部类型的大小总和。结构如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">0x..40</th>
+<th align="center">[a]</th>
+<th align="center">[b</th>
+<th align="center">b</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0x..45</td>
+<td align="center">b]</td>
+<td align="center">[c</td>
+<td align="center">c]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>参考资料：</p>
+<p>[1]: http://blog.chinaunix.net/uid-31343710-id-5756197.html</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Markdown使用笔记/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../C语言-const常变量/" class="btn btn-neutral" title="const常变量"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../C语言-const常变量/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Markdown使用笔记/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

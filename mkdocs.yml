@@ -1,0 +1,17 @@
+site_name: Le_desin Docs
+
+pages:
+
+        - ['index.md','主页',]
+
+        - ['c/C语言-const常变量.md','C语言','const常变量']
+        - ['c/C语言-字节对齐.md','C语言','字节对齐']
+
+        - ['c/Markdown使用笔记.md','About']
+
+          
+theme: readthedocs
+
+
+
+
